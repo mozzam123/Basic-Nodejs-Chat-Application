@@ -58,20 +58,25 @@
   <body>
     <ul id="messages"></ul>
     <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
+      <input id="nickname" placeholder="Enter your nickname" autocomplete="off" />
+      <input id="input" placeholder="Type a message..." autocomplete="off" />
+      <button>Send</button>
     </form>
+    
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io();
 
       var messages = document.getElementById("messages");
       var form = document.getElementById("form");
+      var nicknameInput = document.getElementById("nickname");
       var input = document.getElementById("input");
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (input.value) {
-          socket.emit("chat message", input.value);
+        if (input.value && nicknameInput.value) {
+          var nickNameWithMessage = `${nicknameInput.value}: ${input.value}`
+          socket.emit("chat message", nickNameWithMessage);
           input.value = "";
         }
       });
