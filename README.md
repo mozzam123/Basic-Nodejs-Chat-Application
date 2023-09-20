@@ -10,7 +10,7 @@ This is a simple WebSocket chat application built with Node.js and Socket.IO.
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```shell
-   git clone <repository-url>
+   git clone https://github.com/mozzam123/Basic-Nodejs-Chat-Application.git
    ```
 
 ## Usage
